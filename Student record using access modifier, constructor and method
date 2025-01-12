@@ -1,0 +1,92 @@
+# Student-record-using-access-modifier-constructor-and-method
+class Student {
+    // Fields (Private to enforce encapsulation)
+    private String name;
+    private int rollNumber;
+    private double marks;
+
+    // Constructor (Parameterized)
+    public Student(String name, int rollNumber, double marks) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    // Public getter and setter methods for accessing private fields
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    // Method to display student details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+// Main class
+public class StudentRecord {
+    public static void main(String[] args) {
+        // Creating student object using constructor
+        Student student1 = new Student("Alice", 101, 89.5);
+
+        // Displaying initial details
+        System.out.println("Student 1 Details:");
+        student1.displayDetails();
+
+        // Modifying student details using setter methods
+        System.out.println("\nUpdating Student 1 Details...");
+        student1.setName("Alice Smith");
+        student1.setMarks(92.0);
+
+        // Displaying updated details
+        System.out.println("Updated Student 1 Details:");
+        student1.displayDetails();
+
+        // Adding another student
+        System.out.println("\nAdding another student...");
+        Student student2 = new Student("Bob", 102, 78.0);
+
+        System.out.println("Student 2 Details:");
+        student2.displayDetails();
+    }
+}
+output:
+Student 1 Details:
+Name: Alice
+Roll Number: 101
+Marks: 89.5
+
+Updating Student 1 Details...
+Updated Student 1 Details:
+Name: Alice Smith
+Roll Number: 101
+Marks: 92.0
+
+Adding another student...
+Student 2 Details:
+Name: Bob
+Roll Number: 102
+Marks: 78.0
+
